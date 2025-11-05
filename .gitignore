@@ -1,0 +1,23 @@
+# ===== Visual Studio build folders =====
+Debug/
+Release/
+x64/
+x86/
+ipch/
+obj/
+ECHO ÇÕ <OFF> Ç≈Ç∑ÅB
+# ===== Visual Studio generated files =====
+.vs/
+*.VC.db
+*.VC.opendb
+*.suo
+*.user
+*.ipch
+*.log
+ECHO ÇÕ <OFF> Ç≈Ç∑ÅB
+# ===== Misc temp/backup =====
+*.bak
+*.tmp
+ECHO ÇÕ <OFF> Ç≈Ç∑ÅB
+# ===== Resource intermediates =====
+*.aps
