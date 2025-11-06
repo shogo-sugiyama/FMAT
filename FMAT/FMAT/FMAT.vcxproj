@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{5CCD1324-2049-42D3-8B3D-69A3BD02FD50}</ProjectGuid>
+    <ProjectGuid>{C9162A0A-938A-43A3-93DA-E2163A526071}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
     <RootNamespace>FMAT</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -183,29 +183,24 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CEepromDlg.h" />
     <ClInclude Include="FMAT.h" />
     <ClInclude Include="FMATDlg.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="IComm.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="Serialomm.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="DeviceSession.h" />
-    <ClInclude Include="FmatMainDlg.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CEepromDlg.cpp" />
     <ClCompile Include="FMAT.cpp" />
     <ClCompile Include="FMATDlg.cpp" />
-    <ClCompile Include="FmatMainDlg.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SerialComm.cpp" />
-    <ClCompile Include="DeviceSession.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="FMAT.rc" />

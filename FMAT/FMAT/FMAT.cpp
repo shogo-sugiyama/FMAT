@@ -6,8 +6,6 @@
 #include "framework.h"
 #include "FMAT.h"
 #include "FMATDlg.h"
-#include "Comm/IComm.h"
-
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

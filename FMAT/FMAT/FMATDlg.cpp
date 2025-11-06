@@ -6,6 +6,7 @@
 #include "framework.h"
 #include "FMAT.h"
 #include "FMATDlg.h"
+#include "CEepromDlg.h"
 #include "afxdialogex.h"
 
 #ifdef _DEBUG
@@ -65,6 +66,7 @@ BEGIN_MESSAGE_MAP(CFMATDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_EEPROMRW, &CFMATDlg::OnBnClickedEepromrw)
 END_MESSAGE_MAP()
 
 
@@ -153,3 +155,10 @@ HCURSOR CFMATDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CFMATDlg::OnBnClickedEepromrw()
+{
+	CEepromDlg dlg;
+	dlg.DoModal(); // モーダル表示（閉じるまでメイン画面は操作不可）
+}
