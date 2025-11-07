@@ -33,26 +33,50 @@ BEGIN_MESSAGE_MAP(CEepromDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
+
 // CEepromDlg メッセージ ハンドラー
 BOOL CEepromDlg::OnInitDialog() {
     CDialogEx::OnInitDialog();
     m_ClistCtrl.ModifyStyle(0, LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS);
     m_ClistCtrl.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_DOUBLEBUFFER);
 
-    m_ClistCtrl.InsertColumn(0, L"Addr", LVCFMT_RIGHT, 60);
-    m_ClistCtrl.InsertColumn(1, L"Value", LVCFMT_RIGHT, 80);
-    m_ClistCtrl.InsertColumn(2, L"備考", LVCFMT_LEFT, 160);
+    // 8列作成（Addr/Value×4）
+    m_ClistCtrl.InsertColumn(0, L"Addr1", LVCFMT_RIGHT, 50);
+    m_ClistCtrl.InsertColumn(1, L"Value1", LVCFMT_RIGHT, 70);
+    m_ClistCtrl.InsertColumn(2, L"Addr2", LVCFMT_RIGHT, 50);
+    m_ClistCtrl.InsertColumn(3, L"Value2", LVCFMT_RIGHT, 70);
+    m_ClistCtrl.InsertColumn(4, L"Addr3", LVCFMT_RIGHT, 50);
+    m_ClistCtrl.InsertColumn(5, L"Value3", LVCFMT_RIGHT, 70);
+    m_ClistCtrl.InsertColumn(6, L"Addr4", LVCFMT_RIGHT, 50);
+    m_ClistCtrl.InsertColumn(7, L"Value4", LVCFMT_RIGHT, 70);
 
-    // 行を用意（例：0x01〜0x21）
-    for (int i = 1; i < 0x21; ++i) {
-        CString addr; addr.Format(L"%d", i);
-        int row = m_ClistCtrl.InsertItem(i, addr);
-        m_ClistCtrl.SetItemText(row, 1, L"");   // 値（編集対象）
-        m_ClistCtrl.SetItemText(row, 2, L"");   // 備考
+    // 32行分のデータを作る
+    for (int row = 0; row < 32; ++row)
+    {
+        CString addrStr;
+        int nIndex = m_ClistCtrl.InsertItem(row, L"");
+
+        // Addr1
+        addrStr.Format(L"%d", 1 + row);
+        m_ClistCtrl.SetItemText(nIndex, 0, addrStr);
+        // Addr2
+        addrStr.Format(L"%d", 33 + row);
+        m_ClistCtrl.SetItemText(nIndex, 2, addrStr);
+        // Addr3
+        addrStr.Format(L"%d", 65 + row);
+        m_ClistCtrl.SetItemText(nIndex, 4, addrStr);
+        // Addr4
+        addrStr.Format(L"%d", 97 + row);
+        m_ClistCtrl.SetItemText(nIndex, 6, addrStr);
+
+        // Value列は空欄（後で編集用）
+        m_ClistCtrl.SetItemText(nIndex, 1, L"");
+        m_ClistCtrl.SetItemText(nIndex, 3, L"");
+        m_ClistCtrl.SetItemText(nIndex, 5, L"");
+        m_ClistCtrl.SetItemText(nIndex, 7, L"");
     }
     return TRUE;
 }
-
 
 void CEepromDlg::OnBnClickedOk()
 {
