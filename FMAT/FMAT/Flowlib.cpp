@@ -2,9 +2,11 @@
 #include "Comm.h"
 #include "Flowlib.h"
 
+
 #define		RCV_BUFF_A_SIZE	128
 #define		COMMAND_SIZE	8
 #define     COMPORT 10
+#define		ACK	6
 
 UINT ReadThread(LPVOID pParam)
 {
@@ -49,6 +51,7 @@ Flowlib::Flowlib()
 //destructor
 Flowlib::~Flowlib()
 {
+	close();
 };
 
 //open
@@ -87,7 +90,7 @@ bool Flowlib::close()
 };
 
 //send packet
-bool Flowlib::SendPacket(char* Data)
+bool Flowlib::SendPacket(unsigned char* Data)
 {
 	int size = 8;
 	DWORD NumberOfBytesWritten = 0;
@@ -103,7 +106,7 @@ bool Flowlib::SendPacket(char* Data)
 };
 
 //recieve packet
-bool Flowlib::ReceivePacket(char* Data)
+bool Flowlib::ReceivePacket(unsigned char* Data)
 {
 	while (true)
 	{
@@ -130,7 +133,7 @@ bool Flowlib::ReceivePacket(char* Data)
 };
 
 //check erc
-bool Flowlib::CheckEoc(char* Data)
+bool Flowlib::CheckEoc(unsigned char* Data)
 {
 	if (*(Data + 7) != AddCheckSum(Data))
 		return false;
@@ -138,7 +141,7 @@ bool Flowlib::CheckEoc(char* Data)
 };
 
 //add check sum
-char Flowlib::AddCheckSum(char* Data)
+char Flowlib::AddCheckSum(unsigned char* Data)
 {
 	char sum = 0;
 	for (int i = 0; i < 7; i++)
@@ -149,27 +152,51 @@ char Flowlib::AddCheckSum(char* Data)
 };
 
 //read eeprom
-bool Flowlib::ReadEeprom(int Adr, int* Data)
+bool Flowlib::ReadEeprom(int Adr, int* Value)
 {
+	unsigned char rbuff[8];
+	MakePacket(m_SendData, Adr);
+	SendPacket(m_SendData);
+	ReceivePacket(rbuff);
+	if (rbuff[0] != ACK)
+		return false;
+	*Value = 0;
+	*Value = rbuff[2];
+	*Value = *Value << 8;
+	*Value |= rbuff[1];
 	return true;
+
 };
 
 //write eeprom
-bool Flowlib::WriteEeprom(char* Data)
+bool Flowlib::WriteEeprom(unsigned char* Data)
 {
+	
+
+
 	return true;
 };
 
 //make packet
-bool Flowlib::MakePacket(char* Data)
+bool Flowlib::MakePacket(unsigned char* tbuff, int eppadr)
 {
+	
+	tbuff[0] = 20;
+	tbuff[1] = (unsigned char) eppadr;
+	tbuff[2] = (unsigned char)(eppadr >> 8);
+	tbuff[3] = 0;
+	tbuff[4] = 0;
+	tbuff[5] = 0;
+	tbuff[6] = 0;
+	tbuff[7] = AddCheckSum(tbuff);
+		
 	return true;
 };
 
 //open sereal
 bool Flowlib::OpenSerial(int comport, int baudrate)
 {
-	//COM¥Ý©`¥ÈOpen
+	//COMOpen
 	if (m_Com.CommStart(comport, baudrate, true) == false) {
 		return false;
 	}
@@ -181,7 +208,7 @@ bool Flowlib::OpenSerial(int comport, int baudrate)
 //close serial
 bool Flowlib::CloseSerial()
 {
-	//COM¥Ý©`¥ÈClose
+	//COMClose
 	if (m_Com.CommStop() == false) {
 		return false;
 	}

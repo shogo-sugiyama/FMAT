@@ -5,7 +5,7 @@
 #include "FMAT.h"
 #include "CEepromDlg.h"
 #include "afxdialogex.h"
-
+#include "Flowlib.h"
 
 // CEepromDlg ダイアログ
 
@@ -30,6 +30,7 @@ void CEepromDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CEepromDlg, CDialogEx)
     ON_BN_CLICKED(IDOK, &CEepromDlg::OnBnClickedOk)
+    ON_BN_CLICKED(IDC_BUTTON1, &CEepromDlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -39,6 +40,10 @@ BOOL CEepromDlg::OnInitDialog() {
     CDialogEx::OnInitDialog();
     m_ClistCtrl.ModifyStyle(0, LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS);
     m_ClistCtrl.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_DOUBLEBUFFER);
+    m_Flowptr = new Flowlib();
+
+
+
 
     // 8列作成（Addr/Value×4）
     m_ClistCtrl.InsertColumn(0, L"Addr1", LVCFMT_RIGHT, 50);
@@ -82,4 +87,44 @@ void CEepromDlg::OnBnClickedOk()
 {
     // TODO: ここにコントロール通知ハンドラー コードを追加します。
     CDialogEx::OnOK();
+}
+
+
+void CEepromDlg::OnBnClickedButton1()
+{
+    int value;
+    int nIndex=1;
+    int cIndex = 1;
+    TCHAR buff[256];
+        // TODO: ここにコントロール通知ハンドラー コードを追加します。
+  
+    m_Flowptr->open();
+    if (!m_Flowptr->open())
+    {
+        MessageBox(_T("open error"), _T("error"), MB_OK);
+        return;
+    }
+   
+
+    for(int i=1; i<128+1; i++)
+    { 
+        if (!m_Flowptr->ReadEeprom(i, &value))
+        {
+            MessageBox(_T("readEpprom error"), _T("Error"), MB_OK);
+            return;
+        }
+        _stprintf_s(buff, _T("%d"), value);
+
+        m_ClistCtrl.SetItemText(nIndex, cIndex, buff);
+        nIndex++;
+        if (nIndex == 33)
+        {
+            nIndex = 1;
+            cIndex += 2;
+
+        }
+    }
+    
+
+
 }

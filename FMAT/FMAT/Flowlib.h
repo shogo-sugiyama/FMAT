@@ -18,22 +18,22 @@ public:
 	bool close();
 
 	//send packet
-	bool SendPacket(char* Data);
+	bool SendPacket(unsigned char* Data);
 
 	//recieve packet
-	bool ReceivePacket(char* Data);
+	bool ReceivePacket(unsigned char* Data);
 	//check erc
-	bool CheckEoc(char* Data);
+	bool CheckEoc(unsigned char* Data);
 	//add check sum
-	char AddCheckSum(char* Data);
+	char AddCheckSum(unsigned char* Data);
 	//read eeprom
 	bool ReadEeprom(int adr, int* Data);
 	//read eeprom
-	bool ReadEepromALL(char* Data);
+	bool ReadEepromALL(unsigned char* Data);
 	//write eeprom
-	bool WriteEeprom(char* Data);
+	bool WriteEeprom(unsigned char* Data);
 	//make packet
-	bool MakePacket(char* Data);
+	bool MakePacket(unsigned char* Data, int eepadr);
 	//open sereal
 	bool OpenSerial(int comport, int baudrate);
 	//close serial

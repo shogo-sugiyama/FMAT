@@ -8,6 +8,8 @@
 #include "FMATDlg.h"
 #include "CEepromDlg.h"
 #include "afxdialogex.h"
+#include "Flowlib.h"
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -102,6 +104,8 @@ BOOL CFMATDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 小さいアイコンの設定
 
 	// TODO: 初期化をここに追加します。
+
+	
 
 	return TRUE;  // フォーカスをコントロールに設定した場合を除き、TRUE を返します。
 }

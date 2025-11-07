@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿#include "Flowlib.h"
+
+#pragma once
 
 
 // CEepromDlg ダイアログ
@@ -24,4 +26,7 @@ public:
 	virtual BOOL OnInitDialog();
 	CListCtrl m_ClistCtrl;
 	afx_msg void OnBnClickedOk();
+	afx_msg void OnBnClickedButton1();
+	Flowlib* m_Flowptr = NULL;
+
 };
