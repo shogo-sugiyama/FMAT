@@ -184,8 +184,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CEepromDlg.h" />
+    <ClInclude Include="Comm.h" />
+    <ClInclude Include="Flowlib.h" />
     <ClInclude Include="FMAT.h" />
     <ClInclude Include="FMATDlg.h" />
+    <ClInclude Include="FormatSTX_ETX.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -193,8 +196,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CEepromDlg.cpp" />
+    <ClCompile Include="Comm.cpp" />
+    <ClCompile Include="Flowlib.cpp" />
     <ClCompile Include="FMAT.cpp" />
     <ClCompile Include="FMATDlg.cpp" />
+    <ClCompile Include="FormatSTX_ETX.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
