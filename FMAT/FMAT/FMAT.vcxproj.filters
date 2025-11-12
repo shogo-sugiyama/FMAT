@@ -45,6 +45,9 @@
     <ClInclude Include="FormatSTX_ETX.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="CmdList.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FMAT.cpp">

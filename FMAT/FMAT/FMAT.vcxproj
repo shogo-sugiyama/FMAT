@@ -184,6 +184,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CEepromDlg.h" />
+    <ClInclude Include="CmdList.h" />
     <ClInclude Include="Comm.h" />
     <ClInclude Include="Flowlib.h" />
     <ClInclude Include="FMAT.h" />
