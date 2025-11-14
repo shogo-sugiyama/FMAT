@@ -13,29 +13,29 @@
 //	**********DSP->SNS Command ASIO　　*********
 // Original
 //
-// S_HRESET	EQU	1//	HARDWARE RESET COMMAND
-// S_ACTIVE	EQU	2//	ACTIVATE SENSOR
-// S_DACTIVE	EQU	3//	DEACTIVATE SENSOR
-// S_GETFLOW	EQU	4//	GET SAMPLES SENSOR
-// S_SOFTSTART	EQU	5// *RESTART WITH RAM DATA(DO NOT SET ROM DEFAULT)(DO NOT SET EEPROM DATA)
-// S_SETEP_RAM	EQU	6// *WRITE DATA TO RAM BUFFER(DO NOT WRITE TO EEPROM)
-// S_RDAD		EQU	7// +READ AD DATA(FLOW)
-// S_RDADCUR	EQU	8// +READ AD DATA(CURRENT)
-// S_RDADEL	EQU	9// +READ AD DATA(ELECTRODE)
-// S_RDADVOL	EQU	10// +READ AD DATA(VOLTAGE)
-// S_RDADFLCR	EQU	11// +READ AD DATA(flow & current)
-// S_RDADELVL	EQU	12// +READ AD DATA(electrode & voltage)
-// S_CHKEL	EQU	13//	CHECK ELECTRODE
-// S_CHKCOIL	EQU	14// +CHECK COIL
-// S_ELTEST	EQU	15// +ELCT ON / OFF TEST
-// S_SETDEFAULT	EQU	16//	SET DEFAULT DATA TO EEPROM
-// S_SETEPROM	EQU	19// *RELOAD EEPROM DATA TO RAM
-// S_RDEPROM	EQU	20//	READ EEPROM DATA
-// S_WREPROM	EQU	21//	WRITE EEPROM DATA
+// #define S_HRESET	EQU	1//	HARDWARE RESET COMMAND
+// #define S_ACTIVE	EQU	2//	ACTIVATE SENSOR
+// #define S_DACTIVE	EQU	3//	DEACTIVATE SENSOR
+// #define S_GETFLOW	EQU	4//	GET SAMPLES SENSOR
+// #define S_SOFTSTART	EQU	5// *RESTART WITH RAM DATA(DO NOT SET ROM DEFAULT)(DO NOT SET EEPROM DATA)
+// #define S_SETEP_RAM	EQU	6// *WRITE DATA TO RAM BUFFER(DO NOT WRITE TO EEPROM)
+// #define S_RDAD		EQU	7// +READ AD DATA(FLOW)
+// #define S_RDADCUR	EQU	8// +READ AD DATA(CURRENT)
+// #define S_RDADEL	EQU	9// +READ AD DATA(ELECTRODE)
+// #define S_RDADVOL	EQU	10// +READ AD DATA(VOLTAGE)
+// #define S_RDADFLCR	EQU	11// +READ AD DATA(flow & current)
+// #define S_RDADELVL	EQU	12// +READ AD DATA(electrode & voltage)
+// #define S_CHKEL	EQU	13//	CHECK ELECTRODE
+// #define S_CHKCOIL	EQU	14// +CHECK COIL
+// #define S_ELTEST	EQU	15// +ELCT ON / OFF TEST
+// #define S_SETDEFAULT	EQU	16//	SET DEFAULT DATA TO EEPROM
+// #define S_SETEPROM	EQU	19// *RELOAD EEPROM DATA TO RAM
+// #define S_RDEPROM	EQU	20//	READ EEPROM DATA
+// #define S_WREPROM	EQU	21//	WRITE EEPROM DATA
 //
 // Ver4 拡張
 //
-// S_INQUIRY 	EQU	22// Typeの問い合わせ
+// #define S_INQUIRY 	EQU	22// Typeの問い合わせ
 //
 
 //
@@ -43,27 +43,27 @@
 //
 // Original
 //
-// CM_ERROR	EQU	0// ERROR POLLING COMMAND
-// CM_DATA	EQU	1// AVGFLW LOW POLLING COMMAND
-// CM_VOLCLR	EQU	2// VOLUME CLEAR COMMAND
-// CM_RESET	EQU	3// COMMUNICATION CHANNEL RESET COMMAND
-// CM_TEST	EQU	4// COMMUNICATION TEST(ECHO BACK RESET COMMAND)
+// #define CM_ERROR	EQU	0// ERROR POLLING COMMAND
+// #define CM_DATA	EQU	1// AVGFLW LOW POLLING COMMAND
+// #define CM_VOLCLR	EQU	2// VOLUME CLEAR COMMAND
+// #define CM_RESET	EQU	3// COMMUNICATION CHANNEL RESET COMMAND
+// #define CM_TEST	EQU	4// COMMUNICATION TEST(ECHO BACK RESET COMMAND)
 //
 // Ver3　拡張
 //
-// CM_AVGFLW	EQU	5// 平均流量 COMMAND
-// CM_TOTVOL	EQU	6// 総流量 COMMAND
-// CM_MRESET	EQU	7// ﾓﾆﾀｰ積算計 リセットキー押下問い合わせ COMMAND
+// #define CM_AVGFLW	EQU	5// 平均流量 COMMAND
+// #define CM_TOTVOL	EQU	6// 総流量 COMMAND
+// #define CM_MRESET	EQU	7// ﾓﾆﾀｰ積算計 リセットキー押下問い合わせ COMMAND
 //
 // Ver4　拡張
 //
-// CM_REPEAT1	EQU	8// 表示　Data
-// CM_REPEAT2	EQU	9// 表示　Data
-// CM_RDEPROM	EQU	10// (PC-- > TOTAL) READ EEPROM DATA
-// CM_WREPROM	EQU	11// (PC-- > TOTAL) WRITE EEPROM DATA
-// CM_SETDEFAULT	EQU	12// (PC-- > TOTAL) Default Data をEEPROMへセットする。
-// CM_INQUIRY 	EQU	13// (PC-- > TOTAL) Typeの問い合わせ
-// CM_HRESET	EQU	14// (PC-- > TOTAL) HW Reset
+// #define CM_REPEAT1	EQU	8// 表示　Data
+// #define CM_REPEAT2	EQU	9// 表示　Data
+// #define CM_RDEPROM	EQU	10// (PC-- > TOTAL) READ EEPROM DATA
+// #define CM_WREPROM	EQU	11// (PC-- > TOTAL) WRITE EEPROM DATA
+// #define CM_SETDEFAULT	EQU	12// (PC-- > TOTAL) Default Data をEEPROMへセットする。
+// #define CM_INQUIRY 	EQU	13// (PC-- > TOTAL) Typeの問い合わせ
+// #define CM_HRESET	EQU	14// (PC-- > TOTAL) HW Reset
 // OnLineResponse  0, ff, ff, ff, ff, ff, ff, 6		To Total CSIO
 
 //
@@ -73,24 +73,24 @@
 //
 // Original
 //
-// D_HRESET	EQU	30// RESET(THIS FUNCTION  USE WATCH DOG TIMER RESET)SEND ACK BEFORE DONE
-// D_ONLREQ	EQU	31// ONLINE REQUEST
-// D_CLRVOL	EQU	32// CLEAR VOLUME DATA REQUEST
-// D_OFLREQ	EQU	33// OFFLINE REQUEST
-// D_LCDTEST	EQU	35// LCD TEST
-// D_SWTEST	EQU	36// SWITCH TEST
-// D_EXTONOF	EQU	37// EXTERNAL OUTPUT ON / OFF TEST
-// D_LEDONOF	EQU	38// LED ON / OFF TEST
-// D_SPWONOF	EQU	39// SENSOR POWER ON / OFF TEST
-// D_RDEPROM	EQU	50// READ EEPROM DATA
-// D_WREPROM	EQU	51// WRITE EEPROM DATA
-// D_SETDEFAULT	EQU	56// SET DEFAULT DATA TO EEPROM
-// D_SETDFRAM	EQU	57// SET DEFAULT DATA TO RAM
-// D_SETEPROM	EQU	59// RELOAD EEPROM DATA
+// #define D_HRESET	EQU	30// RESET(THIS FUNCTION  USE WATCH DOG TIMER RESET)SEND ACK BEFORE DONE
+// #define D_ONLREQ	EQU	31// ONLINE REQUEST
+// #define D_CLRVOL	EQU	32// CLEAR VOLUME DATA REQUEST
+// #define D_OFLREQ	EQU	33// OFFLINE REQUEST
+// #define D_LCDTEST	EQU	35// LCD TEST
+// #define D_SWTEST	EQU	36// SWITCH TEST
+// #define D_EXTONOF	EQU	37// EXTERNAL OUTPUT ON / OFF TEST
+// #define D_LEDONOF	EQU	38// LED ON / OFF TEST
+// #define D_SPWONOF	EQU	39// SENSOR POWER ON / OFF TEST
+// #define D_RDEPROM	EQU	50// READ EEPROM DATA
+// #define D_WREPROM	EQU	51// WRITE EEPROM DATA
+// #define D_SETDEFAULT	EQU	56// SET DEFAULT DATA TO EEPROM
+// #define D_SETDFRAM	EQU	57// SET DEFAULT DATA TO RAM
+// #define D_SETEPROM	EQU	59// RELOAD EEPROM DATA
 //
 // Ver4　拡張
 //
-// D_INQUIRY 	EQU	34// Typeの問い合わせ
+// #define D_INQUIRY 	EQU	34// Typeの問い合わせ
 
 
 
@@ -100,76 +100,76 @@
 //	**********DSP->SNS Command ASIO　　*********
 // Original
 //
-// S_HRESET	EQU	1//	HARDWARE RESET COMMAND
-// S_ACTIVE	EQU	2//	ACTIVATE SENSOR
-// S_DACTIVE	EQU	3//	DEACTIVATE SENSOR
-// S_GETFLOW	EQU	4//	GET SAMPLES SENSOR
-// S_SOFTSTART	EQU	5// *RESTART WITH RAM DATA(DO NOT SET ROM DEFAULT)(DO NOT SET EEPROM DATA)
-// S_SETEP_RAM	EQU	6// *WRITE DATA TO RAM BUFFER(DO NOT WRITE TO EEPROM)
-// S_RDAD		EQU	7// +READ AD DATA(FLOW)
-// S_RDADCUR	EQU	8// +READ AD DATA(CURRENT)
-// S_RDADEL	EQU	9// +READ AD DATA(ELECTRODE)
-// S_RDADVOL	EQU	10// +READ AD DATA(VOLTAGE)
-// S_RDADFLCR	EQU	11// +READ AD DATA(flow & current)
-// S_RDADELVL	EQU	12// +READ AD DATA(electrode & voltage)
-// S_CHKEL	EQU	13//	CHECK ELECTRODE
-// S_CHKCOIL	EQU	14// +CHECK COIL
-// S_ELTEST	EQU	15// +ELCT ON / OFF TEST
-// S_SETDEFAULT	EQU	16//	SET DEFAULT DATA TO EEPROM
-// S_SETEPROM	EQU	19// *RELOAD EEPROM DATA TO RAM
-// S_RDEPROM	EQU	20//	READ EEPROM DATA
-// S_WREPROM	EQU	21//	WRITE EEPROM DATA
+// #define S_HRESET	EQU	1//	HARDWARE RESET COMMAND
+// #define S_ACTIVE	EQU	2//	ACTIVATE SENSOR
+// #define S_DACTIVE	EQU	3//	DEACTIVATE SENSOR
+// #define S_GETFLOW	EQU	4//	GET SAMPLES SENSOR
+// #define S_SOFTSTART	EQU	5// *RESTART WITH RAM DATA(DO NOT SET ROM DEFAULT)(DO NOT SET EEPROM DATA)
+// #define S_SETEP_RAM	EQU	6// *WRITE DATA TO RAM BUFFER(DO NOT WRITE TO EEPROM)
+// #define S_RDAD		EQU	7// +READ AD DATA(FLOW)
+// #define S_RDADCUR	EQU	8// +READ AD DATA(CURRENT)
+// #define S_RDADEL	EQU	9// +READ AD DATA(ELECTRODE)
+// #define S_RDADVOL	EQU	10// +READ AD DATA(VOLTAGE)
+// #define S_RDADFLCR	EQU	11// +READ AD DATA(flow & current)
+// #define S_RDADELVL	EQU	12// +READ AD DATA(electrode & voltage)
+// #define S_CHKEL	EQU	13//	CHECK ELECTRODE
+// #define S_CHKCOIL	EQU	14// +CHECK COIL
+// #define S_ELTEST	EQU	15// +ELCT ON / OFF TEST
+// #define S_SETDEFAULT	EQU	16//	SET DEFAULT DATA TO EEPROM
+// #define S_SETEPROM	EQU	19// *RELOAD EEPROM DATA TO RAM
+// #define S_RDEPROM	EQU	20//	READ EEPROM DATA
+// #define S_WREPROM	EQU	21//	WRITE EEPROM DATA
 //
 // Ver4 拡張
 //
-// S_INQUIRY 	EQU	22// Typeの問い合わせ
+// #define S_INQUIRY 	EQU	22// Typeの問い合わせ
 //
 //	***********CSIO Command TOTAL-- > DSP / PC-- > DSP / PC-- > TOTAL**********
 //
 // Original
 //
-// CM_ERROR	EQU	0// ERROR POLLING COMMAND
-// CM_DATA	EQU	1// AVGFLW LOW POLLING COMMAND
-// CM_VOLCLR	EQU	2// VOLUME CLEAR COMMAND
-// CM_RESET	EQU	3// COMMUNICATION CHANNEL RESET COMMAND
-// CM_TEST	EQU	4// COMMUNICATION TEST(ECHO BACK RESET COMMAND)
+// #define CM_ERROR	EQU	0// ERROR POLLING COMMAND
+// #define CM_DATA	EQU	1// AVGFLW LOW POLLING COMMAND
+// #define CM_VOLCLR	EQU	2// VOLUME CLEAR COMMAND
+// #define CM_RESET	EQU	3// COMMUNICATION CHANNEL RESET COMMAND
+// #define CM_TEST	EQU	4// COMMUNICATION TEST(ECHO BACK RESET COMMAND)
 //
 // Ver3　拡張
 //
-// CM_AVGFLW	EQU	5// 平均流量 COMMAND
-// CM_TOTVOL	EQU	6// 総流量 COMMAND
-// CM_MRESET	EQU	7// ﾓﾆﾀｰ積算計 リセットキー押下問い合わせ COMMAND
+// #define CM_AVGFLW	EQU	5// 平均流量 COMMAND
+// #define CM_TOTVOL	EQU	6// 総流量 COMMAND
+// #define CM_MRESET	EQU	7// ﾓﾆﾀｰ積算計 リセットキー押下問い合わせ COMMAND
 //
 // Ver4　拡張
 //
-// CM_REPEAT1	EQU	8// 表示　Data
-// CM_REPEAT2	EQU	9// 表示　Data
-// CM_RDEPROM	EQU	10// (PC-- > TOTAL) READ EEPROM DATA
-// CM_WREPROM	EQU	11// (PC-- > TOTAL) WRITE EEPROM DATA
-// CM_SETDEFAULT	EQU	12// (PC-- > TOTAL) Default Data をEEPROMへセットする。
-// CM_INQUIRY 	EQU	13// (PC-- > TOTAL) Typeの問い合わせ
-// CM_HRESET	EQU	14// (PC-- > TOTAL) HW Reset
-// CM_ONLREQ	EQU	15// (PC-- > TOTAL ONLY) Online Request
+// #define CM_REPEAT1	EQU	8// 表示　Data
+// #define CM_REPEAT2	EQU	9// 表示　Data
+// #define CM_RDEPROM	EQU	10// (PC-- > TOTAL) READ EEPROM DATA
+// #define CM_WREPROM	EQU	11// (PC-- > TOTAL) WRITE EEPROM DATA
+// #define CM_SETDEFAULT	EQU	12// (PC-- > TOTAL) Default Data をEEPROMへセットする。
+// #define CM_INQUIRY 	EQU	13// (PC-- > TOTAL) Typeの問い合わせ
+// #define CM_HRESET	EQU	14// (PC-- > TOTAL) HW Reset
+// #define CM_ONLREQ	EQU	15// (PC-- > TOTAL ONLY) Online Request
 // OnLineResponse  0, ff, ff, ff, ff, ff, ff, 6		To Total CSIO
-// CM_OFLREQ	EQU	16// (PC-- > TOTAL ONLY) OffLine Request
+// #define CM_OFLREQ	EQU	16// (PC-- > TOTAL ONLY) OffLine Request
 //
-// CM_SRDEPROM	EQU	20// DSP経由SNS READ EEPROM DATA
-// CM_SWREPROM	EQU	21// DSP経由SNS WRITE EEPROM DATA
-// CM_SSETDEFAULT	EQU	22// DSP経由SNS Default Data をEEPROMへセットする。
-// CM_SINQUIRY 	EQU	23// DSP経由SNS Typeの問い合わせ
-// CM_SHRESET	EQU	24// DSP経由SNS HW Reset
+// #define CM_SRDEPROM	EQU	20// DSP経由SNS READ EEPROM DATA
+// #define CM_SWREPROM	EQU	21// DSP経由SNS WRITE EEPROM DATA
+// #define CM_SSETDEFAULT	EQU	22// DSP経由SNS Default Data をEEPROMへセットする。
+// #define CM_SINQUIRY 	EQU	23// DSP経由SNS Typeの問い合わせ
+// #define CM_SHRESET	EQU	24// DSP経由SNS HW Reset
 //
 // Ver4　Reserve 未実装
 //
-// CM_CLRVOL	EQU	17// 未実装
-// CM_OFLREQ	EQU	18// 未実装
-// CM_LCDTEST	EQU	19// 未実装
-// CM_SWTEST	EQU	25// 未実装
-// CM_EXTONOF	EQU	26// 未実装
-// CM_LEDONOF	EQU	27// 未実装
-// CM_SPWONOF	EQU	28// 未実装
-// CM_SETDFRAM	EQU	29// 未実装
-// CM_SETEPROM	EQU	30// 未実装
+// #define CM_CLRVOL	EQU	17// 未実装
+// #define CM_OFLREQ	EQU	18// 未実装
+// #define CM_LCDTEST	EQU	19// 未実装
+// #define CM_SWTEST	EQU	25// 未実装
+// #define CM_EXTONOF	EQU	26// 未実装
+// #define CM_LEDONOF	EQU	27// 未実装
+// #define CM_SPWONOF	EQU	28// 未実装
+// #define CM_SETDFRAM	EQU	29// 未実装
+// #define CM_SETEPROM	EQU	30// 未実装
 //
 //
 //	*********Total / Display　ASIO　Command　　**********
@@ -178,33 +178,33 @@
 //
 // Original
 //
-// D_HRESET	EQU	30// RESET(THIS FUNCTION  USE WATCH DOG TIMER RESET)SEND ACK BEFORE DONE
-// D_ONLREQ	EQU	31// ONLINE REQUEST
-// D_CLRVOL	EQU	32// CLEAR VOLUME DATA REQUEST
-// D_OFLREQ	EQU	33// OFFLINE REQUEST
-// D_LCDTEST	EQU	35// LCD TEST
-// D_SWTEST	EQU	36// SWITCH TEST
-// D_EXTONOF	EQU	37// EXTERNAL OUTPUT ON / OFF TEST
-// D_LEDONOF	EQU	38// LED ON / OFF TEST
-// D_SPWONOF	EQU	39// SENSOR POWER ON / OFF TEST
-// D_RDEPROM	EQU	50// READ EEPROM DATA
-// D_WREPROM	EQU	51// WRITE EEPROM DATA
-// D_SETDEFAULT	EQU	56// SET DEFAULT DATA TO EEPROM
-// D_SETDFRAM	EQU	57// SET DEFAULT DATA TO RAM
-// D_SETEPROM	EQU	59// RELOAD EEPROM DATA
+// #define D_HRESET	EQU	30// RESET(THIS FUNCTION  USE WATCH DOG TIMER RESET)SEND ACK BEFORE DONE
+// #define D_ONLREQ	EQU	31// ONLINE REQUEST
+// #define D_CLRVOL	EQU	32// CLEAR VOLUME DATA REQUEST
+// #define D_OFLREQ	EQU	33// OFFLINE REQUEST
+// #define D_LCDTEST	EQU	35// LCD TEST
+// #define D_SWTEST	EQU	36// SWITCH TEST
+// #define D_EXTONOF	EQU	37// EXTERNAL OUTPUT ON / OFF TEST
+// #define D_LEDONOF	EQU	38// LED ON / OFF TEST
+// #define D_SPWONOF	EQU	39// SENSOR POWER ON / OFF TEST
+// #define D_RDEPROM	EQU	50// READ EEPROM DATA
+// #define D_WREPROM	EQU	51// WRITE EEPROM DATA
+// #define D_SETDEFAULT	EQU	56// SET DEFAULT DATA TO EEPROM
+// #define D_SETDFRAM	EQU	57// SET DEFAULT DATA TO RAM
+// #define D_SETEPROM	EQU	59// RELOAD EEPROM DATA
 //
 // Ver4　拡張
 //
-// D_INQUIRY 	EQU	34// Typeの問い合わせ
+// #define D_INQUIRY 	EQU	34// Typeの問い合わせ
 //
 // Ver4　拡張
 //
-// D_DATA		EQU	40// AVG Flow and Volume POLLING COMMAND
-// D_IFLW		EQU	41// 個別流量　Polling
-// D_IVOL		EQU	42// 個別Volume　Polling
-// D_IELCT	EQU	43// 個別電極試験　Polling
-// D_HRESET	EQU	44// HW Reset
-// D_CLRVOL	EQU	45// Volume Clear
+// #define D_DATA		EQU	40// AVG Flow and Volume POLLING COMMAND
+// #define D_IFLW		EQU	41// 個別流量　Polling
+// #define D_IVOL		EQU	42// 個別Volume　Polling
+// #define D_IELCT	EQU	43// 個別電極試験　Polling
+// #define D_HRESET	EQU	44// HW Reset
+// #define D_CLRVOL	EQU	45// Volume Clear
 //
 //
 //
@@ -212,11 +212,11 @@
 //			CSIO上はTotal->DSPのCSIOCommandと同じ。（OnlineCommand)
 // Ver4　拡張
 //
-// CM_D_RDEPROM	EQU	46//
-// CM_D_WREPROM	EQU	47//
-// CM_D_SETDEFAULT EQU	48//
-// CM_D_INQUIRY 	EQU	49// *
-// CM_D_HRESET	EQU	52// HW Reset
+// #define CM_#define D_RDEPROM	EQU	46//
+// #define CM_#define D_WREPROM	EQU	47//
+// #define CM_#define D_SETDEFAULT EQU	48//
+// #define CM_#define D_INQUIRY 	EQU	49// *
+// #define CM_#define D_HRESET	EQU	52// HW Reset
 //
 //
 //	**********Total(ASIO)経由Display(CSIO)経由Sensor(ASIO)へのCommand**********
@@ -225,11 +225,11 @@
 //
 // Ver4　拡張
 //
-// CM_S_RDEPROM	EQU	53//
-// CM_S_WREPROM	EQU	54//
-// CM_S_SETDEFAULT EQU	55//
-// CM_S_INQUIRY 	EQU	58// *
-// CM_S_HRESET 	EQU	60//
+// #define CM_#define S_RDEPROM	EQU	53//
+// #define CM_#define S_WREPROM	EQU	54//
+// #define CM_#define S_SETDEFAULT EQU	55//
+// #define CM_#define S_INQUIRY 	EQU	58// *
+// #define CM_#define S_HRESET 	EQU	60//
 //
 //
 //
@@ -265,7 +265,7 @@
 //
 // 1		-- > SNS
 //
-S_HRESET	EQU	1
+#define S_HRESET	EQU	1
 //
 //	HARDWARE RESET COMMAND
 //
@@ -277,7 +277,7 @@ S_HRESET	EQU	1
 // 2		-- > SNS
 //
 //
-S_ACTIVE	EQU	2
+#define S_ACTIVE	EQU	2
 //
 //	ACTIVATE SENSOR
 //
@@ -289,7 +289,7 @@ S_ACTIVE	EQU	2
 // 3		-- > SNS
 //
 //
-S_DACTIVE	EQU	3
+#define S_DACTIVE	EQU	3
 //
 //	DEACTIVATE SENSOR
 //
@@ -302,7 +302,7 @@ S_DACTIVE	EQU	3
 // 4		-- > SNS
 //
 //
-S_GETFLOW	EQU	4
+#define S_GETFLOW	EQU	4
 //
 //	GET SAMPLES SENSOR
 //
@@ -316,7 +316,7 @@ S_GETFLOW	EQU	4
 // 5		-- > SNS		Diag Use Only
 //
 //
-S_SOFTSTART	EQU	5// No Apl.Use
+#define S_SOFTSTART	EQU	5// No Apl.Use
 //
 //	RESTART WITH RAM DATA
 //	(DO NOT SET ROM DEFAULT)
@@ -326,7 +326,7 @@ S_SOFTSTART	EQU	5// No Apl.Use
 //
 // 6		-- > SNS		Diag Use Only
 //
-S_SETEP_RAM	EQU	6// No Apl.Use
+#define S_SETEP_RAM	EQU	6// No Apl.Use
 //
 //
 //	WRITE DATA TO RAM BUFFER
@@ -347,7 +347,7 @@ S_SETEP_RAM	EQU	6// No Apl.Use
 //
 //	READ AD DATA(FLOW)
 //
-S_RDAD	EQU	7
+#define S_RDAD	EQU	7
 //
 //
 //	PR0
@@ -363,7 +363,7 @@ S_RDAD	EQU	7
 //	READ AD DATA(CURRENT)
 //
 //
-S_RDADCUR	EQU	8
+#define S_RDADCUR	EQU	8
 //
 //
 //
@@ -380,7 +380,7 @@ S_RDADCUR	EQU	8
 //	READ AD DATA(ELECTRODE)
 //
 //
-S_RDADEL	EQU	9
+#define S_RDADEL	EQU	9
 //
 //
 //
@@ -396,7 +396,7 @@ S_RDADEL	EQU	9
 // 10		-- > SNS		Diag Use Only
 //
 //
-S_RDADVOL	EQU	10
+#define S_RDADVOL	EQU	10
 //
 //	READ AD DATA(VOLTAGE)
 //
@@ -412,7 +412,7 @@ S_RDADVOL	EQU	10
 //
 // 11		-- > SNS		Diag Use Only
 //
-S_RDADFLCR	EQU	11
+#define S_RDADFLCR	EQU	11
 //
 //	READ AD DATA(flow& current)
 //
@@ -432,7 +432,7 @@ S_RDADFLCR	EQU	11
 // 12	-- > SNS		Diag Use Only
 //
 //
-S_RDADELVL	EQU	12
+#define S_RDADELVL	EQU	12
 //
 //	READ AD DATA(electrode& voltage)
 //
@@ -452,7 +452,7 @@ S_RDADELVL	EQU	12
 // 13	-- > SNS
 //
 //
-S_CHKEL	EQU	13
+#define S_CHKEL	EQU	13
 //
 //	CHECK ELECTRODE
 //
@@ -472,7 +472,7 @@ S_CHKEL	EQU	13
 // 14	-- > SNS
 //
 //
-S_CHKCOIL	EQU	14
+#define S_CHKCOIL	EQU	14
 //
 //	CHECK COIL
 //
@@ -485,7 +485,7 @@ S_CHKCOIL	EQU	14
 // 15	-- > SNS
 //
 //
-S_ELTEST	EQU	15
+#define S_ELTEST	EQU	15
 //
 //	ELCT TEST
 //
@@ -498,7 +498,7 @@ S_ELTEST	EQU	15
 // 16		-- > SNS
 //
 //
-S_SETDEFAULT	EQU	16
+#define S_SETDEFAULT	EQU	16
 //
 //	SET DEFAULT DATA TO EEPROM
 //
@@ -507,7 +507,7 @@ S_SETDEFAULT	EQU	16
 // 19 		-- > SNS	No Apl.Use
 //
 //
-S_SETEPROM	EQU	19
+#define S_SETEPROM	EQU	19
 //
 //	RELOAD EEPROM DATA TO RAM
 //
@@ -517,7 +517,7 @@ S_SETEPROM	EQU	19
 // 20		-- > SNS
 //
 //
-S_RDEPROM	EQU	20
+#define S_RDEPROM	EQU	20
 //
 //	READ EEPROM DATA
 //
@@ -530,7 +530,7 @@ S_RDEPROM	EQU	20
 // 21		-- > SNS
 //
 //
-S_WREPROM	EQU	21
+#define S_WREPROM	EQU	21
 //
 //	WRITE EEPROM DATA
 //
@@ -548,7 +548,7 @@ S_WREPROM	EQU	21
 // 22		-- > SNS		From Ver4.00
 //
 //
-S_INQUIRY 	EQU	22// Typeの問い合わせ
+#define S_INQUIRY 	EQU	22// Typeの問い合わせ
 //
 //	PR0		TYPE
 //	PR1		VERSION
@@ -583,7 +583,7 @@ S_INQUIRY 	EQU	22// Typeの問い合わせ
 //
 //	SC COOMAND
 //
-CM_ERROR	EQU	0// ERROR POLLING COMMAND
+#define CM_ERROR	EQU	0// ERROR POLLING COMMAND
 //
 //	0	HOST ADR. = 0  SET
 //	1	EPERCN// ERROR COUNTER
@@ -594,7 +594,7 @@ CM_ERROR	EQU	0// ERROR POLLING COMMAND
 //	6	EPERCD// ERROR CODE 4
 //	7	EOC
 //
-CM_DATA		EQU	01H// AVGFLW LOW POLLING COMMAND
+#define CM_DATA		EQU	01H// AVGFLW LOW POLLING COMMAND
 //
 //	Response
 //
@@ -607,7 +607,7 @@ CM_DATA		EQU	01H// AVGFLW LOW POLLING COMMAND
 //	6 VOLUME High
 //	7 EOC
 //
-CM_VOLCLR	EQU	02H// VOLUME CLEAR COMMAND
+#define CM_VOLCLR	EQU	02H// VOLUME CLEAR COMMAND
 //
 //	0 HOST ADR. = 0  SET
 //	1 0
@@ -619,7 +619,7 @@ CM_VOLCLR	EQU	02H// VOLUME CLEAR COMMAND
 //	7 EOC
 
 //
-CM_COMRESET	EQU	03H// COMMUNICATION CHANNEL RESET COMMAND
+#define CM_COMRESET	EQU	03H// COMMUNICATION CHANNEL RESET COMMAND
 
 //
 //	0 HOST ADR. = 0  SET
@@ -632,7 +632,7 @@ CM_COMRESET	EQU	03H// COMMUNICATION CHANNEL RESET COMMAND
 //	7 EOC
 
 
-CM_TEST		EQU	04H// COMMUNICATION TEST(ECHO BACK RESET COMMAND)
+#define CM_TEST		EQU	04H// COMMUNICATION TEST(ECHO BACK RESET COMMAND)
 //
 //
 //	0 HOST ADR. = 0  SET
@@ -649,7 +649,7 @@ CM_TEST		EQU	04H// COMMUNICATION TEST(ECHO BACK RESET COMMAND)
 //	COMMAND TOTAL積算計--->ﾓﾆﾀｰ積算計(MAIN) 再修正
 //
 //
-CM_AVGFLW	EQU	05H// 平均流量 COMMAND　　// Ver3 拡張
+#define CM_AVGFLW	EQU	05H// 平均流量 COMMAND　　// Ver3 拡張
 //
 //	Flow Data を旧Monitorに送るCommandでResponseは不要
 //
@@ -664,7 +664,7 @@ CM_AVGFLW	EQU	05H// 平均流量 COMMAND　　// Ver3 拡張
 
 
 
-CM_TOTVOL	EQU	06H// 総流量 COMMAND　　// Ver3 拡張
+#define CM_TOTVOL	EQU	06H// 総流量 COMMAND　　// Ver3 拡張
 //
 //	Volume Data を旧Monitorに送るCommandでResponseは不要
 //
@@ -678,13 +678,13 @@ CM_TOTVOL	EQU	06H// 総流量 COMMAND　　// Ver3 拡張
 //	7 -
 
 
-CM_MRESET	EQU	07H// ﾓﾆﾀｰ積算計 リセットキー押下問い合わせ COMMAND// Ver3 拡張
+#define CM_MRESET	EQU	07H// ﾓﾆﾀｰ積算計 リセットキー押下問い合わせ COMMAND// Ver3 拡張
 //
 //	COMMAND TOTAL積算計--->Monitor
 //       MonitorはTOTALに対してClearの要求の有無を返答する。
 //
 //	0  0			0のみ可能
-//	1  CM_MRESET　 = 7
+//	1  #define CM_MRESET　 = 7
 //	2  0 / 1  Clear 要求の有無
 //	3 -
 //	4 -
@@ -692,7 +692,7 @@ CM_MRESET	EQU	07H// ﾓﾆﾀｰ積算計 リセットキー押下問い合わせ COMMAND// Ver3 拡張
 //	6 -
 //	7 EOC
 //
-CM_REPEAT1	EQU	08H// 表示　Data　Ver4　拡張
+#define CM_REPEAT1	EQU	08H// 表示　Data　Ver4　拡張
 //
 //	0  Adr
 //	1  Command  8
@@ -704,7 +704,7 @@ CM_REPEAT1	EQU	08H// 表示　Data　Ver4　拡張
 //	7 EOC
 //
 
-CM_REPEAT2	EQU	09H// 表示　Data　Ver4　拡張
+#define CM_REPEAT2	EQU	09H// 表示　Data　Ver4　拡張
 //	0  Adr
 //	1  Command  9
 //	2		SEG13, SEG14, SEG15 - 01
@@ -718,7 +718,7 @@ CM_REPEAT2	EQU	09H// 表示　Data　Ver4　拡張
 //
 //
 
-CM_RDEPROM	EQU	10//	READ EEPROM DATA  Ver4　拡張
+#define CM_RDEPROM	EQU	10//	READ EEPROM DATA  Ver4　拡張
 //
 //
 //  	0  ADR// Command
@@ -740,7 +740,7 @@ CM_RDEPROM	EQU	10//	READ EEPROM DATA  Ver4　拡張
 //  	7  EOC
 //
 //
-CM_WREPROM	EQU	11//	WRITE EEPROM DATA  Ver4　拡張
+#define CM_WREPROM	EQU	11//	WRITE EEPROM DATA  Ver4　拡張
 
 //  	0  ADR// Command
 //  	1  CMD = 11
@@ -760,7 +760,7 @@ CM_WREPROM	EQU	11//	WRITE EEPROM DATA  Ver4　拡張
 //  	6  0
 //  	7  EOC
 
-CM_SETDEFAULT	EQU	12// Ver4　拡張
+#define CM_SETDEFAULT	EQU	12// Ver4　拡張
 
 
 //  	0  ADR// Command
@@ -781,7 +781,7 @@ CM_SETDEFAULT	EQU	12// Ver4　拡張
 //  	6  0
 //  	7  EOC
 
-CM_INQUIRY 	EQU	13// Typeの問い合わせ Ver4　拡張　未実装
+#define CM_INQUIRY 	EQU	13// Typeの問い合わせ Ver4　拡張　未実装
 
 //	0  Adr// Command
 //	1  Command = 13
@@ -800,7 +800,7 @@ CM_INQUIRY 	EQU	13// Typeの問い合わせ Ver4　拡張　未実装
 //	5  EPFLAG2
 //	6  ERROR数
 //	7  EOC
-CM_HRESET	EQU	14// HW Reset Ver4　拡張
+#define CM_HRESET	EQU	14// HW Reset Ver4　拡張
 
 //	0  Adr// Command
 //	1  Command = 14
@@ -834,7 +834,7 @@ CM_HRESET	EQU	14// HW Reset Ver4　拡張
 //	*****Total->DSP->SNS Command*****
 //
 
-CM_SRDEPROM	EQU	15// DSP経由SNS　Command READ EEPROM DATA  Ver4　拡張
+#define CM_SRDEPROM	EQU	15// DSP経由SNS　Command READ EEPROM DATA  Ver4　拡張
 //
 //
 //  	0  ADR// Command
@@ -856,7 +856,7 @@ CM_SRDEPROM	EQU	15// DSP経由SNS　Command READ EEPROM DATA  Ver4　拡張
 //  	7  EOC
 //
 //
-CM_SWREPROM	EQU	16// DSP経由SNS　Command WRITE EEPROM DATA  Ver4　拡張
+#define CM_SWREPROM	EQU	16// DSP経由SNS　Command WRITE EEPROM DATA  Ver4　拡張
 
 //  	0  ADR// Command
 //  	1  CMD = 11
@@ -876,7 +876,7 @@ CM_SWREPROM	EQU	16// DSP経由SNS　Command WRITE EEPROM DATA  Ver4　拡張
 //  	6  0
 //  	7  EOC
 
-CM_SSETDEFAULT	EQU	17// DSP経由SNS　Command Ver4　拡張
+#define CM_SSETDEFAULT	EQU	17// DSP経由SNS　Command Ver4　拡張
 
 
 //  	0  ADR// Command
@@ -897,7 +897,7 @@ CM_SSETDEFAULT	EQU	17// DSP経由SNS　Command Ver4　拡張
 //  	6  0
 //  	7  EOC
 
-CM_SINQUIRY 	EQU	18// DSP経由SNS　Command Typeの問い合わせ Ver4　拡張　未実装
+#define CM_SINQUIRY 	EQU	18// DSP経由SNS　Command Typeの問い合わせ Ver4　拡張　未実装
 
 //	0  Adr// Command
 //	1  Command = 13
@@ -916,7 +916,7 @@ CM_SINQUIRY 	EQU	18// DSP経由SNS　Command Typeの問い合わせ Ver4　拡張　未実装
 //	5  EPFLAG2
 //	6  ERROR数
 //	7  EOC
-CM_SHRESET	EQU	19// DSP経由SNS　Command HW Reset Ver4　拡張
+#define CM_SHRESET	EQU	19// DSP経由SNS　Command HW Reset Ver4　拡張
 
 //	0  Adr// Command
 //	1  Command = 14
@@ -941,15 +941,15 @@ CM_SHRESET	EQU	19// DSP経由SNS　Command HW Reset Ver4　拡張
 //
 // 　Total, Display, Monitor, Repeater への　Command　CSIO　　Ver4　拡張　未実装
 //
-CM_CLRVOL	EQU	20
-CM_OFLREQ	EQU	21
-CM_LCDTEST	EQU	22
-CM_SWTEST	EQU	23
-CM_EXTONOF	EQU	24
-CM_LEDONOF	EQU	25
-CM_SPWONOF	EQU	26
-CM_SETDFRAM	EQU	27
-CM_SETEPROM	EQU	28
+#define CM_CLRVOL	EQU	20
+#define CM_OFLREQ	EQU	21
+#define CM_LCDTEST	EQU	22
+#define CM_SWTEST	EQU	23
+#define CM_EXTONOF	EQU	24
+#define CM_LEDONOF	EQU	25
+#define CM_SPWONOF	EQU	26
+#define CM_SETDFRAM	EQU	27
+#define CM_SETEPROM	EQU	28
 
 //
 //
@@ -969,21 +969,21 @@ CM_SETEPROM	EQU	28
 
 
 
-	CM_T_DATA	EQU	0// AVG Flow and Volume POLLING COMMAND
-	CM_T_IFLW	EQU	1// 個別流量　Polling
-	CM_T_IVOL	EQU	2// 個別Volume　Polling
-	CM_T_IELCT	EQU	3// 個別電極試験　Polling
-	CM_T_RDEPROM	EQU	4// READ EEPROM DATA
-	CM_T_WREPROM	EQU	5// WRITE EEPROM DATA
-	CM_T_SETDEFAULT	EQU	6// Default Data をEEPROMへセットする。
-	CM_T_INQUIRY 	EQU	7// Typeの問い合わせ
-	CM_T_HRESET	EQU	8// HW Reset
-	CM_T_CLRVOL	EQU	9// Volume Clear
-	CM_T_LCDTEST	EQU	10// LCD Test
-	CM_T_SWTEST	EQU	11// SW Test
-	CM_T_EXTONOF	EQU	12// EXT Test
-	CM_T_LEDONOF	EQU	13// LED Test
-	CM_T_SPWONOF	EQU	14// SNS Power Test
+	#define CM_T_DATA	EQU	0// AVG Flow and Volume POLLING COMMAND
+	#define CM_T_IFLW	EQU	1// 個別流量　Polling
+	#define CM_T_IVOL	EQU	2// 個別Volume　Polling
+	#define CM_T_IELCT	EQU	3// 個別電極試験　Polling
+	#define CM_T_RDEPROM	EQU	4// READ EEPROM DATA
+	#define CM_T_WREPROM	EQU	5// WRITE EEPROM DATA
+	#define CM_T_SETDEFAULT	EQU	6// Default Data をEEPROMへセットする。
+	#define CM_T_INQUIRY 	EQU	7// Typeの問い合わせ
+	#define CM_T_HRESET	EQU	8// HW Reset
+	#define CM_T_CLRVOL	EQU	9// Volume Clear
+	#define CM_T_LCDTEST	EQU	10// LCD Test
+	#define CM_T_SWTEST	EQU	11// SW Test
+	#define CM_T_EXTONOF	EQU	12// EXT Test
+	#define CM_T_LEDONOF	EQU	13// LED Test
+	#define CM_T_SPWONOF	EQU	14// SNS Power Test
 	//
 //
 //
@@ -995,7 +995,7 @@ CM_SETEPROM	EQU	28
 //
 //
 //
-CM_D_RDEPROM		EQU	15
+#define CM_#define D_RDEPROM		EQU	15
 //
 //
 //  	0  CMD = 15// Command
@@ -1016,7 +1016,7 @@ CM_D_RDEPROM		EQU	15
 //  	6  0
 //  	7  EOC
 //
-CM_D_WREPROM		EQU	16
+#define CM_#define D_WREPROM		EQU	16
 //
 
 //  	0  CMD = 16// Command
@@ -1037,7 +1037,7 @@ CM_D_WREPROM		EQU	16
 //  	6  0
 //  	7  EOC
 //
-CM_D_SETDEFAULT		EQU	17
+#define CM_#define D_SETDEFAULT		EQU	17
 //
 //  	0  CMD = 17// Command
 //  	1  Adr
@@ -1058,7 +1058,7 @@ CM_D_SETDEFAULT		EQU	17
 //  	7  EOC
 
 //
-CM_D_INQUIRY 		EQU	18
+#define CM_#define D_INQUIRY 		EQU	18
 //
 //  	0  CMD = 18// Command
 //  	1  Adr
@@ -1077,7 +1077,7 @@ CM_D_INQUIRY 		EQU	18
 //	5  EPFLAG3
 //	6  ERROR数
 //	7  EOC
-CM_D_HRESET		EQU	19// Typeの問い合わせ
+#define CM_#define D_HRESET		EQU	19// Typeの問い合わせ
 
 //  	0  CMD = 19// Command
 //  	1  Adr
@@ -1102,7 +1102,7 @@ CM_D_HRESET		EQU	19// Typeの問い合わせ
 //
 //	Ver4 拡張
 //
-CM_S_RDEPROM		EQU	20
+#define CM_#define S_RDEPROM		EQU	20
 //
 //
 //  	0  CMD = 20// Command
@@ -1124,7 +1124,7 @@ CM_S_RDEPROM		EQU	20
 //  	7  EOC
 //
 //
-CM_S_WREPROM		EQU	21
+#define CM_#define S_WREPROM		EQU	21
 
 //  	0  CMD = 21// Command
 //  	1  Adr
@@ -1143,7 +1143,7 @@ CM_S_WREPROM		EQU	21
 //  	5  READ BACK DATA
 //  	6  0
 //  	7  EOC
-CM_S_SETDEFAULT		EQU	22
+#define CM_#define S_SETDEFAULT		EQU	22
 //  	0  CMD = 22// Command
 //  	1  Adr
 //  	2  0
@@ -1162,7 +1162,7 @@ CM_S_SETDEFAULT		EQU	22
 //  	6  0
 //  	7  EOC
 
-CM_S_INQUIRY 		EQU	23
+#define CM_#define S_INQUIRY 		EQU	23
 //
 //  	0  CMD = 23// Command
 //  	1  Adr
@@ -1183,7 +1183,7 @@ CM_S_INQUIRY 		EQU	23
 //	7  EOC
 
 
-CM_S_HRESET 		EQU	24
+#define CM_#define S_HRESET 		EQU	24
 //
 //  	0  CMD = 24// Command
 //  	1  Adr
@@ -1218,30 +1218,30 @@ CM_S_HRESET 		EQU	24
 //	RESET(THIS FUNCTION  USE WATCH DOG TIMER RESET)
 //	SEND ACK BEFORE DONE
 //
-D_HRESET	EQU	30
+#define D_HRESET	EQU	30
 //
 // ------------------------------------------------------------------ -
 //
 //	ONLINE REQUEST
 //
-D_ONLREQ	EQU	31
+#define D_ONLREQ	EQU	31
 //
 // ------------------------------------------------------------------ -
 //
 //	CLEAR VOLUME DATA REQUEST
 //
-D_CLRVOL	EQU	32
+#define D_CLRVOL	EQU	32
 //
 //
 // ------------------------------------------------------------------ -
 //
 //	OFFLINE REQUEST
 //
-D_OFLREQ	EQU	33
+#define D_OFLREQ	EQU	33
 //
 // ----------------------------------------------------------------------
 //
-D_INQUIRY 	EQU	34// Typeの問い合わせ　　Ver4　拡張
+#define D_INQUIRY 	EQU	34// Typeの問い合わせ　　Ver4　拡張
 
 //	PR0		TYPE
 //	PR1		VERSION
@@ -1253,19 +1253,19 @@ D_INQUIRY 	EQU	34// Typeの問い合わせ　　Ver4　拡張
 //
 //	LCD TEST
 //
-D_LCDTEST	EQU	35
+#define D_LCDTEST	EQU	35
 //
 // ----------------------------------------------------------------------
 //
 //	SWITCH TEST
 //
-D_SWTEST	EQU	36
+#define D_SWTEST	EQU	36
 //
 // ----------------------------------------------------------------------
 //
 //	EXTERNAL OUTPUT ON / OFF TEST
 //
-D_EXTONOF	EQU	37
+#define D_EXTONOF	EQU	37
 //
 //	PR0	#0		EXT_OP1 OFF
 //	PR0	#1		EXT_OP1 ON
@@ -1277,7 +1277,7 @@ D_EXTONOF	EQU	37
 //	LED ON / OFF TEST
 //
 //
-D_LEDONOF	EQU	38
+#define D_LEDONOF	EQU	38
 //
 //	CHECK PR0	#1	B_LIGHT_ON
 //	CHECK PR0	#0	B_LIGHT_OFF
@@ -1286,7 +1286,7 @@ D_LEDONOF	EQU	38
 //
 //	SENSOR POWER ON / OFF TEST
 //
-D_SPWONOF	EQU	39
+#define D_SPWONOF	EQU	39
 //
 //	CHECK PR0	#1	B_LIGHT_ON
 //	CHECK PR0	#0	B_LIGHT_OFF
@@ -1296,13 +1296,13 @@ D_SPWONOF	EQU	39
 //
 //	READ EEPROM DATA
 //
-D_RDEPROM	EQU	50
+#define D_RDEPROM	EQU	50
 //
 // ---------------------------------------------------------------------- -
 //
 //	WRITE EEPROM DATA
 //
-D_WREPROM	EQU	51
+#define D_WREPROM	EQU	51
 //
 //
 // ---------------------------------------------------------------------- -
@@ -1310,20 +1310,20 @@ D_WREPROM	EQU	51
 //
 //	SET DEFAULT DATA TO EEPROM
 //
-D_SETDEFAULT	EQU	56
+#define D_SETDEFAULT	EQU	56
 //
 //
 // ----------------------------------------------------------------------
 //
 //	SET DEFAULT DATA TO RAM
 //
-D_SETDFRAM	EQU	57
+#define D_SETDFRAM	EQU	57
 //
 //
 // --------------------------------------------------------------------------
 //
 //	RELOAD EEPROM DATA
 //
-D_SETEPROM	EQU	59
+#define D_SETEPROM	EQU	59
 //
 // ----------------------------------------------------------------------

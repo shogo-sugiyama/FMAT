@@ -168,11 +168,47 @@ bool Flowlib::ReadEeprom(int Adr, int* Value)
 
 };
 
+
 //write eeprom
 bool Flowlib::WriteEeprom(unsigned char* Data)
 {
-	
 
+	if (Data == nullptr)
+	{
+		log("WriteEeprom Invalid Parameter");
+		return false;
+	}
+
+	unsigned char sbuff[8] = {};
+	unsigned char rbuff[8] = {};
+
+	return true;
+	sbuff[0] = 21;
+	sbuff[1] = Data[0];
+	sbuff[2] = Data[1];
+	sbuff[3] = Data[2];
+	sbuff[4] = Data[3];
+	sbuff[5] = 0;
+	sbuff[6] = 0;
+	sbuff[7] = AddCheckSum(sbuff);
+
+	if (!SendPacket(sbuff))
+	{
+		log("WriteEeprom Send Error");
+		return false;
+	}
+
+	if (!ReceivePacket(rbuff))
+	{
+		log("WriteEeprom Receive Error");
+		return false;
+	}
+
+	if (rbuff[0] != ACK)
+	{
+		log("WriteEeprom ACK Error");
+		return false;
+	}
 
 	return true;
 };
